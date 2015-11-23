@@ -1,0 +1,82 @@
+.msg-layout {
+    min-width: 200px;
+    height: auto;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+}
+
+.msg-font {
+    font-size: 13px;
+}
+
+.msg-refresh {
+    text-align: left;
+    width: 80px;
+    padding-left: 10px;
+    color: silver;
+}
+
+.msg-refresh > div {
+    width: 40px;
+    height: 30px;
+    font-size: 12px;
+}
+
+.msg-sort {
+    text-align: right;
+    width: 120px;
+    padding: 10px 0px 10px 10px;
+    float: right;
+    margin-right: 10px;
+}
+
+.msg-title {
+    width: 50%;
+    max-width: 150px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.msg-order {
+    margin-left: 8px;
+}
+
+.msg-order-my-line {
+    color: #0084c7;
+}
+
+.msg-order-nearest {
+    color: limegreen;
+}
+
+.msg-order-hot {
+    color: #dd3322;
+}
+
+.msg-content {
+    list-style: none;
+}
+
+.msg-post {
+    border-top: silver dashed 1px;
+    padding: 10px;
+}
+
+.msg-inline {
+    display: inline-block;
+}
+
+.msg-post-body {
+    width: auto;
+    height: auto;
+    display: inline;
+    position: absolute;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.msg-header {
+    border-bottom: groove gold 1px;
+    box-shadow: 3px 3px 1px #888888;
+}

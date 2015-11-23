@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+    <aop:aspectj-autoproxy/>
+    <context:component-scan base-package="com.zoe"/>
+    <context:property-placeholder location="classpath*:*.config.properties"/>
+    <bean id="packagePrefix" name="packagePrefix" class="com.zoe.commons.bean.PackageInfo">
+        <property name="packagePrefix" value="com.zoe"/>
+    </bean>
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetObject">
+            <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+                <property name="targetClass" value="java.lang.System"/>
+                <property name="targetMethod" value="getProperties"/>
+            </bean>
+        </property>
+        <property name="targetMethod" value="putAll"/>
+        <property name="arguments">
+            <map>
+                <entry key="file.encoding" value="UTF-8"/>
+            </map>
+        </property>
+    </bean>
+</beans>
